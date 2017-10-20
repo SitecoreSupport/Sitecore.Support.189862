@@ -39,6 +39,7 @@ namespace Sitecore.Support.FXM.Client.Pipelines.ExperienceEditor.ExternalPage
       var headSingleNode = htmlDoc.DocumentNode.SelectSingleNode("//head");
       if (headSingleNode != null)
       {
+        RemoveBeaconFromNode(headSingleNode);
         headControl.Text = headSingleNode.InnerHtml;
       }
 
