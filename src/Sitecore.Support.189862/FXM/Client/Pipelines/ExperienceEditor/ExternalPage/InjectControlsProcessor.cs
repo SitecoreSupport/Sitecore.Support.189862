@@ -54,11 +54,7 @@ namespace Sitecore.Support.FXM.Client.Pipelines.ExperienceEditor.ExternalPage
           this.HostName = FxmUtility.GetUriHost(experienceEditorUrl);
         }
 
-        var beaconTag = this.GetBeaconScriptTag(bodySingleNode);
-        if (beaconTag != null)
-        {
-          this.RemoveNode(beaconTag);
-        }
+        RemoveBeaconFromNode(bodySingleNode);
 
         bodyHtml = bodySingleNode.InnerHtml;
       }
