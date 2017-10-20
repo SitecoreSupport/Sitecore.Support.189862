@@ -65,5 +65,14 @@ namespace Sitecore.Support.FXM.Client.Pipelines.ExperienceEditor.ExternalPage
 
       args.BodyControls.Add(new LiteralControl(bodyHtml));
     }
+
+    protected virtual void RemoveBeaconFromNode(HtmlNode node)
+    {
+      var beaconTag = this.GetBeaconScriptTag(node);
+      if (beaconTag != null)
+      {
+        this.RemoveNode(beaconTag);
+      }
+    }
   }
 }
